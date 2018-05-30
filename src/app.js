@@ -1,5 +1,9 @@
-import anythingiwant from './utils.js'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import IndecisionApp from './components/indecision_app';
+import 'normalize.css/normalize.css'; // cross browser setting
+import './styles/styles.scss'
 
-console.log('app is running')
-
-console.log(anythingiwant(10,2))
+ReactDOM.render((
+  <IndecisionApp />
+), document.getElementById('app'))
