@@ -4,6 +4,10 @@
   "main": "index.js",
   "author": "Justikro",
   "license": "MIT",
+  "engines": {
+    "npm":"5.6.0",
+    "node":"9.5.0"
+  },
   "scripts": {
     "dev": "live-server public",
     "build": "webpack",
