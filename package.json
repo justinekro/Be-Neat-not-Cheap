@@ -9,6 +9,7 @@
     "node":"9.5.0"
   },
   "scripts": {
+    "start": "node bundle.js",
     "dev": "live-server public",
     "build": "webpack",
     "dev-server": "webpack-dev-server"
