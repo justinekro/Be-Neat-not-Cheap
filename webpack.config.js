@@ -23,6 +23,7 @@ module.exports = {
   },
   devtool: 'cheap-module-eval-source-map', // useful in case of error > it indicates where the error comes from not in bundle.js but in the proper js file. great for dev, not really for production
   devServer: { // allows not to regenerate bundle.js
-    contentBase: path.join(__dirname, 'public')
+    contentBase: path.join(__dirname, 'public'),
+    historyApiFallback: true // tells the server that the routing will be done on the client side and that index.html should always be rendered
   }
 };
