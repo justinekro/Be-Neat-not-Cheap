@@ -4,10 +4,11 @@ import { Provider } from 'react-redux';
 import AppRouter from './routers/app_router';
 import configureStore from './store/configure_store';
 import 'normalize.css/normalize.css'; // cross browser setting
-import './styles/styles.scss'
-import { addExpense } from './actions/expenses'
-import { setTextFilter } from './actions/filters'
-import getVisibleExpenses from './selectors/expenses'
+import './styles/styles.scss';
+import { addExpense } from './actions/expenses';
+import { setTextFilter } from './actions/filters';
+import getVisibleExpenses from './selectors/expenses';
+
 
 const store = configureStore();
 

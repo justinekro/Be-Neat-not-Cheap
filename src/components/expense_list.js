@@ -3,13 +3,19 @@ import { connect } from 'react-redux'; // connects to the store
 import ExpenseListItem from './expense_list_item';
 import selectExpenses from '../selectors/expenses';
 
+import ExpensesSummary from './expenses_summary'
+
 const ExpenseList = (props) => (
   <div>
     <h1> Expense List </h1>
+    <ExpensesSummary/>
+    
 
     {props.expenses.map((expense) => (
       <ExpenseListItem key={expense.id} {...expense}/> // with {... we pass as props all the expense object} > we spread it
     ))}
+
+
   </div>
 
 );
