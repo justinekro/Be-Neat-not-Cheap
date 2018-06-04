@@ -10,7 +10,7 @@ module.exports = (env) => {
   return {
     entry: './src/app.js', // webpack.js.org
     output: {
-      path: path.join(__dirname, 'public'), // where do we want to put it ? the path for the project on the machine
+      path: path.join(__dirname, 'public','dist'), // where do we want to put it ? the path for the project on the machine
       filename:'bundle.js' // whatever we want
     },
     module: {
@@ -44,7 +44,8 @@ module.exports = (env) => {
     devtool: isProduction ? 'source-map' : 'inline-source-map', // useful in case of error > it indicates where the error comes from not in bundle.js but in the proper js file. great for dev, not really for production
     devServer: { // allows not to regenerate bundle.js
       contentBase: path.join(__dirname, 'public'),
-      historyApiFallback: true // tells the server that the routing will be done on the client side and that index.html should always be rendered
+      historyApiFallback: true,
+      publicPath: '/dist/' // tells the server that the routing will be done on the client side and that index.html should always be rendered
     }
   }
 }
