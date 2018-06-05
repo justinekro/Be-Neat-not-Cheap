@@ -9,11 +9,10 @@ const ExpensesSummary = ({expenseCount, expensesTotal}) => {
   const expenseWord = expenseCount === 1 ? 'expense' : 'expenses' ;
   return (
     <h2>
-      Viewing {expenseCount} {expenseWord} - total : {numeral(expensesTotal/100).format('$0,0.00')}
+      {expenseCount} {expenseWord} - {numeral(expensesTotal/100).format('$0,0.00')}
     </h2>
   );
 }
-
 
 const mapStateToProps = (state) => {
   const visibleExpenses = selectExpenses(state.expenses, state.filters);

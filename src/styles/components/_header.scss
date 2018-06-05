@@ -1,0 +1,37 @@
+.header{
+  background: $dark-blue;
+}
+
+.header__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $l-size 0;
+}
+
+
+.header__title {
+  text-decoration: none;
+  color: white;
+  h1 {
+    margin:0;
+  }
+}
+
+.subheader {
+  background-color: $light-blue;
+  padding: $s-size 0;
+  h2 {
+    margin: 0;
+  }
+}
+
+.subheader__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  a {
+    text-align: center;
+    text-decoration: none;
+  }
+}
