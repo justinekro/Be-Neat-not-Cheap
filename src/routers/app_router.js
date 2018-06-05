@@ -1,28 +1,31 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch, Link, NavLink } from 'react-router-dom';
-import ExpenseDashboardPage from '../components/expense_dashboard'
-import startAddExpensePage from '../components/add_expense'
-import EditExpensePage from '../components/edit_expense'
-import HelpPage from '../components/help'
-import Header from '../components/header'
-import NotFoundPage from '../components/not_found'
+import { Router, Route, Switch, Link, NavLink } from 'react-router-dom';
+import createHistory from 'history/createBrowserHistory';
+import ExpenseDashboardPage from '../components/expense_dashboard';
+import AddExpensePage from '../components/add_expense';
+import EditExpensePage from '../components/edit_expense';
+import HelpPage from '../components/help';
 
+import LoginPage from '../components/login_page';
+import NotFoundPage from '../components/not_found';
+import PrivateRoute from './private_route';
+
+export const history = createHistory();
 
 const AppRouter = () => (
   // {/* BrowserRouter expects only one children component */}
-  <BrowserRouter>
+  <Router history={history}>
     <div>
-      <Header/>
       <Switch>
-        <Route path="/" component={ExpenseDashboardPage} exact={true}/>
-        <Route path="/create" component={startAddExpensePage}/>
-        <Route path="/edit/:id" component={EditExpensePage}/>
-        <Route path="/help" component={HelpPage}/>
+        <Route path="/" component={LoginPage} exact={true}/>
+        <PrivateRoute path="/dashboard" component={ExpenseDashboardPage}/>
+        <PrivateRoute path="/create" component={AddExpensePage}/>
+        <PrivateRoute path="/edit/:id" component={EditExpensePage}/>
+        <PrivateRoute path="/help" component={HelpPage}/>
         <Route component={NotFoundPage}/>
       </Switch>
     </div>
-  </BrowserRouter>
-
+  </Router>
 
 );
 
