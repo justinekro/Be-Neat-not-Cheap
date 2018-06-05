@@ -3,7 +3,7 @@ import uuid from 'uuid'
 
 // Add expense
 
-const addExpense = ({
+const startAddExpense = ({
   description = '',
   note = '',
   amount = 0,
@@ -151,9 +151,9 @@ store.subscribe(() => {
   console.log(visibleExpenses)
 });
 
-const expenseOne = store.dispatch(addExpense({description: 'Rent', amount: 16000}));
-const expenseTwo = store.dispatch(addExpense({description: 'Coffee', amount: 3000,}));
-const expenseThree = store.dispatch(addExpense({description: 'Weed', amount: 15000}));
+const expenseOne = store.dispatch(startAddExpense({description: 'Rent', amount: 16000}));
+const expenseTwo = store.dispatch(startAddExpense({description: 'Coffee', amount: 3000,}));
+const expenseThree = store.dispatch(startAddExpense({description: 'Weed', amount: 15000}));
 
 store.dispatch(sortByAmount())
 
